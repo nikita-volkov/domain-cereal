@@ -10,8 +10,6 @@ import THLego.Helpers
 import qualified THLego.Lambdas as Lambdas
 import qualified TemplateHaskell.Compat.V0208 as Compat
 
--- *
-
 serializeInstanceD :: Model.TypeDec -> Dec
 serializeInstanceD (Model.TypeDec typeName typeDef) =
   InstanceD Nothing [] headType [putFunD, getFunD]
@@ -38,8 +36,6 @@ serializeInstanceD (Model.TypeDec typeName typeDef) =
             components =
               length members
 
--- *
-
 sumPutFunD :: [(Name, Int)] -> Dec
 sumPutFunD members =
   FunD 'Cereal.put clauses
@@ -48,7 +44,7 @@ sumPutFunD members =
       zipWith memberClause members [0 ..]
       where
         memberClause (conName, components) conIdx =
-          Clause [Compat.conp conName componentPList] (NormalB body) []
+          Clause [Compat.conP conName componentPList] (NormalB body) []
           where
             componentNameList = enumAlphabeticNames components
             componentPList = componentNameList & fmap VarP
@@ -63,7 +59,7 @@ productPutFunD conName components =
   FunD 'Cereal.put [clause]
   where
     clause =
-      Clause [Compat.conp conName componentPList] (NormalB body) []
+      Clause [Compat.conP conName componentPList] (NormalB body) []
       where
         componentNameList = enumAlphabeticNames components
         componentPList = componentNameList & fmap VarP
@@ -99,8 +95,6 @@ productGetFunD conName components =
       where
         body =
           applicativeChainE (ConE conName) (replicate components (VarE 'Cereal.get))
-
--- *
 
 mconcatE :: [Exp] -> Exp
 mconcatE = AppE (VarE 'mconcat) . ListE

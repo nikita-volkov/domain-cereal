@@ -5,15 +5,15 @@
 
 packages:
 - completed:
-    hackage: leb128-cereal-1.2@sha256:ba8770629aa1fa8524cbbea3b4065b21def815a766ab6c74174aa57f8c124ead,1883
     pantry-tree:
-      size: 402
       sha256: af6a4af7b400a4891918a0d3b60d16cbf90a4d5d0a101223f920d684d435754c
+      size: 402
+    hackage: leb128-cereal-1.2@sha256:ba8770629aa1fa8524cbbea3b4065b21def815a766ab6c74174aa57f8c124ead,1883
   original:
     hackage: leb128-cereal-1.2
 snapshots:
 - completed:
-    size: 608667
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2022/2/16.yaml
-    sha256: 84b803d5d1e8a364b5aa65386a40650d8b2a1df97cb23d51acd82f5d790f69df
-  original: nightly-2022-02-16
+    sha256: 869e23c4f7367895ae63b129255b70bc8b4b965229aa258f6c50141c6b10ae76
+    size: 607265
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2022/6/8.yaml
+  original: nightly-2022-06-08
