@@ -58,8 +58,8 @@ declare
 main :: IO ()
 main = do
   let value =
-        NetworkServiceAddress $
-          NetworkAddress
+        NetworkServiceAddress
+          $ NetworkAddress
             TcpTransportProtocol
             (IpHost (V4Ip 123))
             456
