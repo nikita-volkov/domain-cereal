@@ -1,6 +1,6 @@
 cabal-version: 3.0
 name:          domain-cereal
-version:       0.1
+version:       0.1.0.1
 synopsis:      Integration of domain with cereal
 homepage:      https://github.com/nikita-volkov/domain-cereal
 bug-reports:   https://github.com/nikita-volkov/domain-cereal/issues
